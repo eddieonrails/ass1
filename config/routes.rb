@@ -49,9 +49,12 @@ Blog::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-   root :to => "home#index"
+  # just remember to delete public/index.html
 
+   root :to => "home#index"
+  match "error" => "home#post_error"
+  match "server" => "home#redirect_error"
+  #match "http://www.youtube.com/watch?v=YVkUvmDQ3HY"  => "home#fetch_url(http://www.youtube.com/watch?v=YVkUvmDQ3HY)"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
